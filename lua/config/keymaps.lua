@@ -18,19 +18,14 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<C-o>", ":bdelete<CR>", { desc = "Delete buffer" })
 
 -- Move text up and down
-keymap.set("n", "<C-Down>", "<Esc>:m .+1<CR>", opts)
-keymap.set("n", "<C-Up>", "<Esc>:m .-2<CR>", opts)
-keymap.set("v", "<C-Down>", ":m '>+1<CR>gv=gv", opts)
-keymap.set("v", "<C-Up>", ":m '<-2<CR>gv=gv", opts)
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Delete char
 -- keymap.set("n", "s", "<Del>", { noremap = true })
 
 -- Oil plugin
 keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
-
--- Key remaps
-keymap.set("i", "¿", "/")
 
 -- Delete all the buffers except the active
 keymap.set(
