@@ -17,19 +17,24 @@ return {
 		},
 
 		config = function()
-			local servers = {
-				"vtsls",
-				"pyright",
-				-- "clangd",
-				"lua_ls",
+			local lazy_setup = {
+				pyright = { "python" },
+				vtsls = { "typescript", "javascript", "typescriptreact", "javascriptreact", "svelte" },
+				svelte = { "svelte" },
+				lua_ls = { "lua" },
+				clangd = { "c", "cpp", "objc", "objcpp" },
 			}
+
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
-			-- configuracion de clangd para que detecte las rutas de librerias para arduino
-			lspconfig.clangd.setup({ cmd = { "clangd", "--compile-commands-dir=." }, capabilities = capabilities })
 
-			for _, server in ipairs(servers) do
-				lspconfig[server].setup({ capabilities = capabilities })
+			for server, file_types in ipairs(lazy_setup) do
+				local opts = { capabilities = capabilities, filetypes = file_types }
+
+				if server == "clangd" then
+					opts.cmd = { "clangd", "--compile-commands-dir=." }
+				end
+				lspconfig[server].setup(opts)
 			end
 		end,
 	},
