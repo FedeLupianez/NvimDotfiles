@@ -1,6 +1,5 @@
 return {
 	"FedeLupianez/RandomPluginNvim",
-
 	config = function()
 		opts = {
 			defaults = {
@@ -17,4 +16,5 @@ return {
 		}
 		require("RandomPlugin").setup(opts)
 	end,
+	enabled = false,
 }
