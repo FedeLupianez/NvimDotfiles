@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
-			ensure_installed = { "astro", "css" },
+			ensure_installed = { "astro", "css", "svelte", "cpp" },
 			highlight = {
 				enable = true, -- Habilitar Tree-sitter para resaltado de sintaxis
 				disable = {}, -- No deshabilitar ningún lenguaje
