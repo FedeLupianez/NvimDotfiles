@@ -119,16 +119,8 @@ return {
 		end,
 	},
 
-	{ "rktjmp/lush.nvim" },
-
 	{
 		"anAcc22/sakura.nvim",
 		config = function() end,
-	},
-
-	{
-		"Alan-TheGentleman/oldworld.nvim",
-		lazy = false,
-		priority = 1000,
 	},
 }
