@@ -4,7 +4,7 @@ return {
 		require("toggleterm").setup({
 			size = 20,
 			shell = vim.o.shell,
-			open_mapping = "<F12>",
+			open_mapping = "<F10>",
 			shade_terminals = true,
 			shading_factor = 1,
 			start_in_insert = true,
