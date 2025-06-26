@@ -120,7 +120,29 @@ return {
 	},
 
 	{
-		"anAcc22/sakura.nvim",
-		config = function() end,
+		"slugbyte/lackluster.nvim",
+		lazy = false,
+		priority = 1000,
+		init = function()
+			-- vim.cmd.colorscheme("lackluster-hack") -- my favorite
+			-- vim.cmd.colorscheme("lackluster-mint")
+			local lackluster = require("lackluster")
+			local colors = lackluster.color
+
+			lackluster.setup({
+				tweak_syntax = {
+					type = "#cd5c5c",
+				},
+				tweak_background = {
+					popup = "none",
+				},
+			})
+		end,
+	},
+
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
 	},
 }
