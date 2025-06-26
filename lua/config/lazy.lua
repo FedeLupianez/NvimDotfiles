@@ -13,7 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-vim.env.TERM = "pwsh.exe"
+vim.env.TERM = "zsh"
 vim.cmd("hi Normal guibg=NONE")
 
 require("lazy").setup({
